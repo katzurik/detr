@@ -79,6 +79,7 @@ def get_args_parser():
                         help="Relative classification weight of the no-object class")
 
     # dataset parameters
+    parser.add_argument('--dataset_json_train',default=None,type=str)
     parser.add_argument('--num_classes', default=None, type=int,
                         help='#classes in your dataset, which can override the value hard-coded in file models/detr.py')
     parser.add_argument('--dataset_file', default='coco')
@@ -243,6 +244,7 @@ def main(args):
 
 
 if __name__ == '__main__':
+    torch.set_num_threads(1)
     parser = argparse.ArgumentParser('DETR training and evaluation script', parents=[get_args_parser()])
     args = parser.parse_args()
     if args.output_dir:
