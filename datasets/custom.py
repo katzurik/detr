@@ -10,7 +10,7 @@ from .coco import CocoDetection, make_coco_transforms
 def build(image_set, args):
     root = Path(args.coco_path)
     assert root.exists(), f'provided path {root} to custom dataset does not exist'
-    training_json_file = 'custom_train.json'
+    training_json_file = args.dataset_json_train
     validation_json_file = 'custom_val.json'
     PATHS = {
         "train": (root / "train2017", root / "annotations" / training_json_file),
