@@ -250,3 +250,9 @@ if __name__ == '__main__':
     if args.output_dir:
         Path(args.output_dir).mkdir(parents=True, exist_ok=True)
     main(args)
+
+    # "ballon_train_iteration_5_set"
+    # --resume
+    # "detr-r50_no-class-head.pth"
+    # --dataset_json_train
+    # "ballon_train_iteration_5_set.json"
